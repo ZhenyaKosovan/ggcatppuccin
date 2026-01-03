@@ -1,17 +1,16 @@
 Package: ggcatpuccin
 Title: Helper function for ggplot2
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Zhenya", "Kosovan", , "yevhen.kosovan@outlook.com", role = c("aut", "cre"))
-Description: Helper function to make your ggplots style with
-    catpuccin-inspired palette.
+Description: Helper function to make your ggplots style with catpuccin-inspired palette.
 License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
 Imports: 
     ggplot2
 Suggests:
     patchwork,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
