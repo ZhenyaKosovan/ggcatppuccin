@@ -46,7 +46,7 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" alt="Scatterplot of mpg data showing highway MPG vs displacement, colored by class with the Catppuccin Macchiato palette applied." width="100%" />
 
 Use `scale_fill_catppuccin()` with geoms that use fill aesthetics, and
 switch flavors as needed:
@@ -65,7 +65,7 @@ ggplot(mpg, aes(class, fill = class)) +
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" alt="Bar chart of vehicle classes using the Catppuccin Latte palette for fills." width="100%" />
 
 The raw hex values are available in `catppuccin_flavors` if you need to
 access individual colors directly.
@@ -123,4 +123,4 @@ plots <- lapply(flavors, plot_flavor)
   (plots[[3]] | plots[[4]])
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" alt="Four scatterplots (Latte, Frappe, Macchiato, Mocha) showing Catppuccin palettes applied to mpg data." width="100%" />

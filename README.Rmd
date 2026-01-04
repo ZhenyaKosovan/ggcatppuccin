@@ -32,7 +32,7 @@ remotes::install_github("ZhenyaKosovan/ggcatppuccin")
 
 Pick any flavor (default is `"mocha"`) and apply the theme plus the color or fill scale. A helper lets you set the session-wide default flavor if you want all plots to match.
 
-```{r, message = FALSE, warning = FALSE}
+```{r, message = FALSE, warning = FALSE, fig.alt = "Scatterplot of mpg data showing highway MPG vs displacement, colored by class with the Catppuccin Macchiato palette applied."}
 library(ggplot2)
 library(ggcatppuccin)
 
@@ -53,7 +53,7 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
 
 Use `scale_fill_catppuccin()` with geoms that use fill aesthetics, and switch flavors as needed:
 
-```{r, message = FALSE, warning = FALSE}
+```{r, message = FALSE, warning = FALSE, fig.alt = "Bar chart of vehicle classes using the Catppuccin Latte palette for fills."}
 ggplot(mpg, aes(class, fill = class)) +
   geom_bar() +
   scale_fill_catppuccin(flavor = "latte") +
@@ -96,7 +96,7 @@ format:
 
 ## Flavors at a glance
 
-```{r, message = FALSE, warning = FALSE}
+```{r, message = FALSE, warning = FALSE, fig.alt = "Four scatterplots (Latte, Frappe, Macchiato, Mocha) showing Catppuccin palettes applied to mpg data."}
 library(patchwork)
 
 flavors <- c("latte", "frappe", "macchiato", "mocha")

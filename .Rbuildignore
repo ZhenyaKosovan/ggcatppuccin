@@ -11,3 +11,8 @@
 ^.*\.Rcheck$
 ^\.Rcheck$
 ^\.\.Rcheck$
+^\\.cache$
+^\.sass-cache$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
