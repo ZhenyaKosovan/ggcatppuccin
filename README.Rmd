@@ -11,10 +11,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ggcatpuccin
+# ggcatppuccin
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/ZhenyaKosovan/ggcatpuccin/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ZhenyaKosovan/ggcatpuccin/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/ZhenyaKosovan/ggcatppuccin/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ZhenyaKosovan/ggcatppuccin/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Catppuccin palettes and a matching `ggplot2` theme for quickly styling plots across four flavors: Latte, Frappe, Macchiato, and Mocha. Discrete color and fill scales pair with `theme_catppuccin()` so backgrounds, text, and grid lines stay coordinated.
@@ -25,7 +25,7 @@ The package is not yet on CRAN; install the development version from GitHub:
 
 ```{r, eval = FALSE}
 # install.packages("remotes")
-remotes::install_github("ZhenyaKosovan/ggcatpuccin")
+remotes::install_github("ZhenyaKosovan/ggcatppuccin")
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ Pick any flavor (default is `"mocha"`) and apply the theme plus the color or fil
 
 ```{r, message = FALSE, warning = FALSE}
 library(ggplot2)
-library(ggcatpuccin)
+library(ggcatppuccin)
 
 set_catppuccin_flavor("macchiato")
 
@@ -44,7 +44,7 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
   theme_catppuccin() +
   labs(
     title = "Fuel efficiency by engine size",
-    subtitle = "Catppuccin Macchiato palette via ggcatpuccin",
+    subtitle = "Catppuccin Macchiato palette via ggcatppuccin",
     x = "Displacement (liters)",
     y = "Highway MPG",
     color = "Class"
@@ -68,6 +68,31 @@ ggplot(mpg, aes(class, fill = class)) +
 ```
 
 The raw hex values are available in `catppuccin_flavors` if you need to access individual colors directly.
+
+## Helper geoms
+
+`geom_catppuccin_point()` and `geom_catppuccin_col()` are small wrappers around the standard geoms that default to Catppuccin accent colors:
+
+```{r, eval = FALSE}
+ggplot(mtcars, aes(wt, mpg, color = factor(gear))) +
+  geom_catppuccin_point(flavor = "macchiato") +
+  scale_color_catppuccin("macchiato") +
+  theme_catppuccin("macchiato")
+```
+
+## R Markdown / Quarto styling
+
+Generate a CSS snippet for your document and point to it from YAML:
+
+```{r, eval = FALSE}
+write_catppuccin_css("catppuccin.css", flavor = "latte")
+```
+
+``` yaml
+format:
+  html:
+    css: catppuccin.css
+```
 
 ## Flavors at a glance
 

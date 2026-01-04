@@ -1,9 +1,9 @@
 
-# ggcatpuccin
+# ggcatppuccin
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ZhenyaKosovan/ggcatpuccin/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ZhenyaKosovan/ggcatpuccin/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/ZhenyaKosovan/ggcatppuccin/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ZhenyaKosovan/ggcatppuccin/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Catppuccin palettes and a matching `ggplot2` theme for quickly styling
@@ -18,7 +18,7 @@ GitHub:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("ZhenyaKosovan/ggcatpuccin")
+remotes::install_github("ZhenyaKosovan/ggcatppuccin")
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ flavor if you want all plots to match.
 
 ``` r
 library(ggplot2)
-library(ggcatpuccin)
+library(ggcatppuccin)
 
 set_catppuccin_flavor("macchiato")
 
@@ -39,7 +39,7 @@ ggplot(mpg, aes(displ, hwy, color = class)) +
   theme_catppuccin() +
   labs(
     title = "Fuel efficiency by engine size",
-    subtitle = "Catppuccin Macchiato palette via ggcatpuccin",
+    subtitle = "Catppuccin Macchiato palette via ggcatppuccin",
     x = "Displacement (liters)",
     y = "Highway MPG",
     color = "Class"
@@ -70,6 +70,32 @@ ggplot(mpg, aes(class, fill = class)) +
 The raw hex values are available in `catppuccin_flavors` if you need to
 access individual colors directly.
 
+## Helper geoms
+
+`geom_catppuccin_point()` and `geom_catppuccin_col()` are small wrappers
+around the standard geoms that default to Catppuccin accent colors:
+
+``` r
+ggplot(mtcars, aes(wt, mpg, color = factor(gear))) +
+  geom_catppuccin_point(flavor = "macchiato") +
+  scale_color_catppuccin("macchiato") +
+  theme_catppuccin("macchiato")
+```
+
+## R Markdown / Quarto styling
+
+Generate a CSS snippet for your document and point to it from YAML:
+
+``` r
+write_catppuccin_css("catppuccin.css", flavor = "latte")
+```
+
+``` yaml
+format:
+  html:
+    css: catppuccin.css
+```
+
 ## Flavors at a glance
 
 ``` r
@@ -97,4 +123,4 @@ plots <- lapply(flavors, plot_flavor)
   (plots[[3]] | plots[[4]])
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />

@@ -3,3 +3,11 @@
 ^LICENSE\.md$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.git$
+^\.gitignore$
+^\.Rprofile$
+^catppuccin\.css$
+^.*\.tar\.gz$
+^.*\.Rcheck$
+^\.Rcheck$
+^\.\.Rcheck$

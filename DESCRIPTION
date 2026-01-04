@@ -1,9 +1,11 @@
-Package: ggcatpuccin
-Title: Helper function for ggplot2
+Package: ggcatppuccin
+Title: Helper Function for ggplot2
 Version: 1.0.0
 Authors@R: 
     person("Zhenya", "Kosovan", , "yevhen.kosovan@outlook.com", role = c("aut", "cre"))
-Description: Helper function to make your ggplots style with catpuccin-inspired palette.
+Author: Zhenya Kosovan [aut, cre]
+Maintainer: Zhenya Kosovan <yevhen.kosovan@outlook.com>
+Description: Helper function to make your ggplots style with catppuccin-inspired palette.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

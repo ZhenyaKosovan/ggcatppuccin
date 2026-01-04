@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(ggcatpuccin)
+library(ggcatppuccin)
 
-test_check("ggcatpuccin")
+test_check("ggcatppuccin")
