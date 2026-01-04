@@ -6,7 +6,7 @@ Authors@R:
 Author: Zhenya Kosovan [aut, cre]
 Maintainer: Zhenya Kosovan <yevhen.kosovan@outlook.com>
 Description: Helper function to make your ggplots style with catppuccin-inspired palette.
-URL: https://zhenyakosovan.github.io/ggcatppuccin, https://github.com/ZhenyaKosovan/ggcatppuccin
+URL: https://zhenyakosovan.github.io/ggcatppuccin, https://github.com/ZhenyaKosovan/ggcatppuccin, https://zhenyakosovan.github.io/ggcatppuccin/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
