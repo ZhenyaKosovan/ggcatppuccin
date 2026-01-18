@@ -1,0 +1,74 @@
+url: https://zhenyakosovan.github.io/ggcatppuccin
+
+template:
+  bootstrap: 5
+  bootswatch: flatly
+  bslib:
+    base_font: {google: "Inter"}
+    code_font: {google: "JetBrains Mono"}
+
+home:
+  title: Catppuccin themes and palettes for ggplot2
+  description: Beautiful Catppuccin color schemes for R visualizations
+
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
+  components:
+    articles:
+      text: Articles
+      menu:
+      - text: Getting Started
+        href: articles/getting-started.html
+      - text: Customization
+        href: articles/customization.html
+      - text: Gallery
+        href: articles/gallery.html
+      - text: R Markdown Integration
+        href: articles/rmarkdown-integration.html
+
+reference:
+- title: Themes
+  desc: Complete ggplot2 themes with Catppuccin styling
+  contents:
+  - theme_catppuccin
+  - has_concept("themes")
+
+- title: Color Scales
+  desc: Discrete and continuous color/fill scales
+  contents:
+  - starts_with("scale_color_catppuccin")
+  - starts_with("scale_fill_catppuccin")
+
+- title: Helper Geoms
+  desc: Convenience geoms with built-in Catppuccin colors
+  contents:
+  - starts_with("geom_catppuccin")
+
+- title: Palettes and Utilities
+  desc: Access palettes and color utilities
+  contents:
+  - catppuccin_flavors
+  - catppuccin_palette
+  - show_catppuccin_palette
+  - compare_flavors
+  - set_catppuccin_flavor
+
+- title: R Markdown Integration
+  desc: CSS generation for documents
+  contents:
+  - catppuccin_css
+  - write_catppuccin_css
+
+articles:
+- title: Get Started
+  navbar: ~
+  contents:
+  - getting-started
+
+- title: Guides
+  contents:
+  - customization
+  - gallery
+  - rmarkdown-integration

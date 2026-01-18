@@ -1,0 +1,159 @@
+---
+title: "Getting Started with ggcatppuccin"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with ggcatppuccin}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 5
+)
+```
+
+## Introduction
+
+ggcatppuccin provides Catppuccin color palettes and themes for ggplot2, allowing you to create beautiful, cohesive visualizations with minimal effort. The package supports all four official Catppuccin flavors: Latte, Frappé, Macchiato, and Mocha.
+
+## Installation
+
+```{r, eval = FALSE}
+# Install from GitHub
+remotes::install_github("ZhenyaKosovan/ggcatppuccin")
+```
+
+## Basic Usage
+
+```{r setup}
+library(ggplot2)
+library(ggcatppuccin)
+```
+
+### Your First Plot
+
+The simplest way to use ggcatppuccin is to add `theme_catppuccin()` and a color scale to your plot:
+
+```{r basic-plot}
+ggplot(mpg, aes(displ, hwy, color = class)) +
+  geom_point(size = 2.5, alpha = 0.8) +
+  scale_color_catppuccin() +
+  theme_catppuccin() +
+  labs(
+    title = "Fuel Efficiency by Engine Size",
+    subtitle = "Using Catppuccin Mocha theme",
+    x = "Displacement (L)",
+    y = "Highway MPG"
+  )
+```
+
+### Choosing a Flavor
+
+You can specify which Catppuccin flavor to use:
+
+```{r latte-plot}
+ggplot(mpg, aes(class, fill = class)) +
+  geom_bar() +
+  scale_fill_catppuccin(flavor = "latte") +
+  theme_catppuccin(flavor = "latte") +
+  guides(fill = "none") +
+  labs(
+    title = "Vehicle Classes",
+    subtitle = "Using Catppuccin Latte theme",
+    x = NULL,
+    y = "Count"
+  )
+```
+
+### Setting a Session Default
+
+To avoid repeating the `flavor` argument, set a session-wide default:
+
+```{r session-default}
+set_catppuccin_flavor("macchiato")
+
+# Now all functions use macchiato by default
+ggplot(mtcars, aes(wt, mpg, color = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_catppuccin() +  # Uses macchiato
+  theme_catppuccin() +         # Uses macchiato
+  labs(
+    title = "Fuel Efficiency vs Weight",
+    color = "Cylinders"
+  )
+```
+
+You can still override the default by specifying `flavor` explicitly:
+
+```{r override-default}
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point(size = 2) +
+  scale_color_catppuccin(flavor = "frappe") +  # Override to frappe
+  theme_catppuccin(flavor = "frappe") +
+  labs(title = "Iris Dataset - Frappé Flavor")
+```
+
+## Fill vs Color Scales
+
+Use `scale_color_catppuccin()` for the `color` aesthetic and `scale_fill_catppuccin()` for the `fill` aesthetic:
+
+```{r fill-example}
+set_catppuccin_flavor("mocha")
+
+ggplot(diamonds[sample(nrow(diamonds), 1000), ], aes(cut, fill = cut)) +
+  geom_bar() +
+  scale_fill_catppuccin() +
+  theme_catppuccin() +
+  guides(fill = "none") +
+  labs(
+    title = "Diamond Cut Distribution",
+    x = "Cut Quality",
+    y = "Count"
+  )
+```
+
+## Continuous Scales
+
+For continuous data, use the `_c` variants:
+
+```{r continuous-scale}
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +
+  scale_fill_catppuccin_c() +
+  theme_catppuccin() +
+  labs(
+    title = "Old Faithful Eruption Density",
+    x = "Waiting Time (min)",
+    y = "Eruption Time (min)"
+  )
+```
+
+## Helper Geoms
+
+The package includes convenience geoms with built-in Catppuccin colors:
+
+```{r helper-geoms}
+set_catppuccin_flavor("macchiato")
+
+# Points default to blue
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_catppuccin_point(size = 3) +
+  theme_catppuccin() +
+  labs(title = "Using geom_catppuccin_point()")
+
+# Bars default to mauve
+ggplot(mpg, aes(class)) +
+  geom_catppuccin_bar() +
+  theme_catppuccin() +
+  labs(title = "Using geom_catppuccin_bar()")
+```
+
+## Next Steps
+
+- Learn about [customization options](customization.html)
+- See the [gallery](gallery.html) for more examples
+- Learn about [R Markdown integration](rmarkdown-integration.html)

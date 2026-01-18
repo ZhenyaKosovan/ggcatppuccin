@@ -5,6 +5,7 @@
 #' heading, link, and code block colors using the chosen flavor.
 #'
 #' @param flavor Which Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+#'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @return `catppuccin_css()` returns a single string containing CSS. `write_catppuccin_css()`
 #'   writes that CSS to a file and invisibly returns the normalized file path.
 #' @examples
@@ -16,7 +17,7 @@
 #' write_catppuccin_css(css_file, flavor = "mocha")
 #' file.exists(css_file)
 #' @export
-catppuccin_css <- function(flavor = "mocha") {
+catppuccin_css <- function(flavor = getOption("ggcatppuccin.flavor", "mocha")) {
   flavor <- match.arg(flavor, choices = names(catppuccin_flavors))
   cols <- catppuccin_flavors[[flavor]]
 
@@ -60,7 +61,7 @@ catppuccin_css <- function(flavor = "mocha") {
 #' @rdname catppuccin_css
 #' @param path File path where the CSS should be written.
 #' @export
-write_catppuccin_css <- function(path = "catppuccin.css", flavor = "mocha") {
+write_catppuccin_css <- function(path = "catppuccin.css", flavor = getOption("ggcatppuccin.flavor", "mocha")) {
   css <- catppuccin_css(flavor)
   path <- normalizePath(path, mustWork = FALSE)
   writeLines(css, path)

@@ -3,14 +3,27 @@
 \name{scale_color_catppuccin}
 \alias{scale_color_catppuccin}
 \alias{scale_fill_catppuccin}
+\alias{scale_color_catppuccin_d}
+\alias{scale_fill_catppuccin_d}
 \title{Catppuccin Color Scales}
 \usage{
-scale_color_catppuccin(flavor = "mocha", ...)
+scale_color_catppuccin(flavor = getOption("ggcatppuccin.flavor", "mocha"), ...)
 
-scale_fill_catppuccin(flavor = "mocha", ...)
+scale_fill_catppuccin(flavor = getOption("ggcatppuccin.flavor", "mocha"), ...)
+
+scale_color_catppuccin_d(
+  flavor = getOption("ggcatppuccin.flavor", "mocha"),
+  ...
+)
+
+scale_fill_catppuccin_d(
+  flavor = getOption("ggcatppuccin.flavor", "mocha"),
+  ...
+)
 }
 \arguments{
-\item{flavor}{The flavor of Catppuccin to use ("mocha", "latte", "frappe", "macchiato").}
+\item{flavor}{The flavor of Catppuccin to use ("mocha", "latte", "frappe", "macchiato").
+Defaults to the value set by \code{set_catppuccin_flavor()}, or "mocha" if not set.}
 
 \item{...}{Additional arguments passed to \code{\link[ggplot2:discrete_scale]{ggplot2::discrete_scale()}}.}
 }

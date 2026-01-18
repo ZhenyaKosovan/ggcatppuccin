@@ -5,12 +5,16 @@
 \alias{write_catppuccin_css}
 \title{Catppuccin CSS for R Markdown and Quarto}
 \usage{
-catppuccin_css(flavor = "mocha")
+catppuccin_css(flavor = getOption("ggcatppuccin.flavor", "mocha"))
 
-write_catppuccin_css(path = "catppuccin.css", flavor = "mocha")
+write_catppuccin_css(
+  path = "catppuccin.css",
+  flavor = getOption("ggcatppuccin.flavor", "mocha")
+)
 }
 \arguments{
-\item{flavor}{Which Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").}
+\item{flavor}{Which Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+Defaults to the value set by \code{set_catppuccin_flavor()}, or "mocha" if not set.}
 
 \item{path}{File path where the CSS should be written.}
 }
