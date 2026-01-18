@@ -1,0 +1,35 @@
+# Catppuccin Color Palettes
+
+A named list containing hex color codes for all four Catppuccin flavors:
+Latte, Frappe, Macchiato, and Mocha. Each flavor contains the same set
+of palette elements, matching the official Catppuccin design system.
+
+## Usage
+
+``` r
+catppuccin_flavors
+```
+
+## Format
+
+An object of class `list` of length 4.
+
+## Value
+
+A named list of flavors, each itself a named list of hex strings.
+
+## See also
+
+[`scale_color_catppuccin()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/scale_color_catppuccin.md),
+[`scale_fill_catppuccin()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/scale_color_catppuccin.md)
+
+## Examples
+
+``` r
+catppuccin_flavors$mocha$blue
+#> [1] "#89b4fa"
+names(catppuccin_flavors$latte)
+#>  [1] "base"     "mantle"   "text"     "subtext1" "subtext0" "overlay2"
+#>  [7] "surface0" "red"      "peach"    "yellow"   "green"    "blue"    
+#> [13] "lavender" "mauve"   
+```
