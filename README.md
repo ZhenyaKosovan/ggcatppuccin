@@ -4,6 +4,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ZhenyaKosovan/ggcatppuccin/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ZhenyaKosovan/ggcatppuccin/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/ZhenyaKosovan/ggcatppuccin/branch/main/graph/badge.svg)](https://codecov.io/gh/ZhenyaKosovan/ggcatppuccin?branch=main)
 <!-- badges: end -->
 
 Catppuccin palettes and a matching `ggplot2` theme for quickly styling

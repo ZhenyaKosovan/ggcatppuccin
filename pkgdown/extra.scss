@@ -57,6 +57,13 @@
   --catppuccin-code-border: var(--catppuccin-overlay);
 }
 
+[data-bs-theme="dark"] img.r-plt,
+[data-bs-theme="dark"] pre .r-plt.img img,
+[data-bs-theme="dark"] .cell-output-display img,
+[data-bs-theme="dark"] .html-widget {
+  filter: none;
+}
+
 [data-bs-theme="dark"] {
   color-scheme: dark;
   --catppuccin-base: #1e1e2e;
