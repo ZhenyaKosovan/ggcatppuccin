@@ -1,0 +1,217 @@
+:root,
+[data-bs-theme="light"] {
+  color-scheme: light;
+  --catppuccin-base: #eff1f5;
+  --catppuccin-mantle: #e6e9ef;
+  --catppuccin-surface0: #ccd0da;
+  --catppuccin-text: #4c4f69;
+  --catppuccin-subtext1: #5c5f77;
+  --catppuccin-subtext0: #6c6f85;
+  --catppuccin-overlay: #7c7f93;
+  --catppuccin-mauve: #8839ef;
+  --catppuccin-blue: #1e66f5;
+  --catppuccin-lavender: #7287fd;
+  --catppuccin-green: #40a02b;
+  --catppuccin-yellow: #df8e1d;
+  --catppuccin-red: #d20f39;
+  --catppuccin-peach: #fe640b;
+
+  --bs-body-bg: var(--catppuccin-base);
+  --bs-body-bg-rgb: 239, 241, 245;
+  --bs-body-color: var(--catppuccin-text);
+  --bs-body-color-rgb: 76, 79, 105;
+  --bs-emphasis-color: var(--catppuccin-text);
+  --bs-emphasis-color-rgb: 76, 79, 105;
+  --bs-secondary-color: var(--catppuccin-subtext1);
+  --bs-secondary-color-rgb: 92, 95, 119;
+  --bs-tertiary-color: var(--catppuccin-subtext0);
+  --bs-tertiary-color-rgb: 108, 111, 133;
+  --bs-secondary-bg: var(--catppuccin-mantle);
+  --bs-secondary-bg-rgb: 230, 233, 239;
+  --bs-tertiary-bg: var(--catppuccin-surface0);
+  --bs-tertiary-bg-rgb: 204, 208, 218;
+  --bs-border-color: var(--catppuccin-surface0);
+  --bs-border-color-translucent: rgba(76, 79, 105, 0.15);
+
+  --bs-primary: var(--catppuccin-mauve);
+  --bs-primary-rgb: 136, 57, 239;
+  --bs-secondary: var(--catppuccin-surface0);
+  --bs-secondary-rgb: 204, 208, 218;
+  --bs-success: var(--catppuccin-green);
+  --bs-success-rgb: 64, 160, 43;
+  --bs-info: var(--catppuccin-blue);
+  --bs-info-rgb: 30, 102, 245;
+  --bs-warning: var(--catppuccin-yellow);
+  --bs-warning-rgb: 223, 142, 29;
+  --bs-danger: var(--catppuccin-red);
+  --bs-danger-rgb: 210, 15, 57;
+
+  --bs-link-color: var(--catppuccin-mauve);
+  --bs-link-color-rgb: 136, 57, 239;
+  --bs-link-hover-color: var(--catppuccin-lavender);
+  --bs-link-hover-color-rgb: 114, 135, 253;
+
+  --bs-code-color: var(--catppuccin-text);
+  --catppuccin-code-bg: var(--catppuccin-surface0);
+  --catppuccin-code-fg: var(--catppuccin-text);
+  --catppuccin-code-border: var(--catppuccin-overlay);
+}
+
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+  --catppuccin-base: #1e1e2e;
+  --catppuccin-mantle: #181825;
+  --catppuccin-surface0: #313244;
+  --catppuccin-text: #cdd6f4;
+  --catppuccin-subtext1: #bac2de;
+  --catppuccin-subtext0: #a6adc8;
+  --catppuccin-overlay: #9399b2;
+  --catppuccin-mauve: #cba6f7;
+  --catppuccin-blue: #89b4fa;
+  --catppuccin-lavender: #b4befe;
+  --catppuccin-green: #a6e3a1;
+  --catppuccin-yellow: #f9e2af;
+  --catppuccin-red: #f38ba8;
+  --catppuccin-peach: #fab387;
+
+  --bs-body-bg: var(--catppuccin-base);
+  --bs-body-bg-rgb: 30, 30, 46;
+  --bs-body-color: var(--catppuccin-text);
+  --bs-body-color-rgb: 205, 214, 244;
+  --bs-emphasis-color: var(--catppuccin-text);
+  --bs-emphasis-color-rgb: 205, 214, 244;
+  --bs-secondary-color: var(--catppuccin-subtext1);
+  --bs-secondary-color-rgb: 186, 194, 222;
+  --bs-tertiary-color: var(--catppuccin-subtext0);
+  --bs-tertiary-color-rgb: 166, 173, 200;
+  --bs-secondary-bg: var(--catppuccin-mantle);
+  --bs-secondary-bg-rgb: 24, 24, 37;
+  --bs-tertiary-bg: var(--catppuccin-surface0);
+  --bs-tertiary-bg-rgb: 49, 50, 68;
+  --bs-border-color: var(--catppuccin-surface0);
+  --bs-border-color-translucent: rgba(205, 214, 244, 0.15);
+
+  --bs-primary: var(--catppuccin-mauve);
+  --bs-primary-rgb: 203, 166, 247;
+  --bs-secondary: var(--catppuccin-surface0);
+  --bs-secondary-rgb: 49, 50, 68;
+  --bs-success: var(--catppuccin-green);
+  --bs-success-rgb: 166, 227, 161;
+  --bs-info: var(--catppuccin-blue);
+  --bs-info-rgb: 137, 180, 250;
+  --bs-warning: var(--catppuccin-yellow);
+  --bs-warning-rgb: 249, 226, 175;
+  --bs-danger: var(--catppuccin-red);
+  --bs-danger-rgb: 243, 139, 168;
+
+  --bs-link-color: var(--catppuccin-mauve);
+  --bs-link-color-rgb: 203, 166, 247;
+  --bs-link-hover-color: var(--catppuccin-lavender);
+  --bs-link-hover-color-rgb: 180, 190, 254;
+
+  --bs-code-color: var(--catppuccin-text);
+  --catppuccin-code-bg: var(--catppuccin-surface0);
+  --catppuccin-code-fg: var(--catppuccin-text);
+  --catppuccin-code-border: var(--catppuccin-overlay);
+}
+
+.navbar {
+  --bs-navbar-color: var(--bs-body-color);
+  --bs-navbar-hover-color: var(--bs-link-hover-color);
+  --bs-navbar-active-color: var(--bs-body-color);
+  --bs-navbar-brand-color: var(--bs-body-color);
+  --bs-navbar-brand-hover-color: var(--bs-link-hover-color);
+  --bs-navbar-toggler-border-color: var(--bs-border-color);
+}
+
+.navbar,
+.navbar.bg-primary,
+.navbar.bg-light,
+.navbar.bg-dark {
+  background-color: var(--catppuccin-mantle) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-border-color);
+}
+
+:root,
+:root[data-bs-theme="light"],
+:root[data-bs-theme="dark"] {
+  pre,
+  code {
+    background-color: var(--catppuccin-code-bg);
+    color: var(--catppuccin-code-fg);
+  }
+
+  pre {
+    border-color: var(--catppuccin-code-border);
+  }
+
+  pre code {
+    background-color: transparent;
+  }
+
+  pre code span {
+    color: var(--catppuccin-code-fg);
+  }
+
+  pre code span.al,
+  pre code span.er {
+    color: var(--catppuccin-red);
+  }
+
+  pre code span.kw,
+  pre code span.cf,
+  pre code span.ot {
+    color: var(--catppuccin-mauve);
+  }
+
+  pre code span.fu,
+  pre code span.im {
+    color: var(--catppuccin-blue);
+  }
+
+  pre code span.st,
+  pre code span.ch,
+  pre code span.ss,
+  pre code span.vs {
+    color: var(--catppuccin-green);
+  }
+
+  pre code span.dv,
+  pre code span.bn,
+  pre code span.fl,
+  pre code span.cn {
+    color: var(--catppuccin-peach);
+  }
+
+  pre code span.pp,
+  pre code span.at {
+    color: var(--catppuccin-lavender);
+  }
+
+  pre code span.sc,
+  pre code span.dt {
+    color: var(--catppuccin-yellow);
+  }
+
+  pre code span.co,
+  pre code span.do,
+  pre code span.an,
+  pre code span.cv,
+  pre code span.in,
+  pre code span.wa {
+    color: var(--catppuccin-subtext0);
+    font-style: italic;
+  }
+
+  pre code span.op {
+    color: var(--catppuccin-subtext1);
+  }
+
+  pre code span.va {
+    color: var(--catppuccin-text);
+  }
+}

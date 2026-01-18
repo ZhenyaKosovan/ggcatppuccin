@@ -2,8 +2,22 @@ url: https://zhenyakosovan.github.io/ggcatppuccin
 
 template:
   bootstrap: 5
-  bootswatch: flatly
   bslib:
+    bg: "#eff1f5"
+    fg: "#4c4f69"
+    primary: "#8839ef"
+    secondary: "#ccd0da"
+    success: "#40a02b"
+    info: "#1e66f5"
+    warning: "#df8e1d"
+    danger: "#d20f39"
+    link-color: "#8839ef"
+    link-hover-color: "#7287fd"
+    code-bg: "#ccd0da"
+    code-color: "#4c4f69"
+    input-bg: "#e6e9ef"
+    input-color: "#4c4f69"
+    input-border-color: "#ccd0da"
     base_font: {google: "Inter"}
     code_font: {google: "JetBrains Mono"}
 

@@ -42,6 +42,9 @@ vignettes/*.pdf
 # pkgdown site
 docs/
 
+# README preview output
+README.html
+
 # translation temp files
 po/*~
 
