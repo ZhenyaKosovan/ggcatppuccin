@@ -33,18 +33,36 @@ reference:
   desc: Complete ggplot2 themes with Catppuccin styling
   contents:
   - theme_catppuccin
-  - has_concept("themes")
+  - theme_catppuccin_minimal
+  - theme_catppuccin_void
 
-- title: Color Scales
-  desc: Discrete and continuous color/fill scales
+- title: Discrete Color Scales
+  desc: Discrete color and fill scales
   contents:
-  - starts_with("scale_color_catppuccin")
-  - starts_with("scale_fill_catppuccin")
+  - scale_color_catppuccin
+  - scale_fill_catppuccin
+  - scale_color_catppuccin_d
+  - scale_fill_catppuccin_d
+
+- title: Continuous Color Scales
+  desc: Continuous color and fill scales
+  contents:
+  - scale_color_catppuccin_c
+  - scale_fill_catppuccin_c
+  - scale_color_catppuccin_sequential
+  - scale_fill_catppuccin_sequential
+  - scale_color_catppuccin_diverging
+  - scale_fill_catppuccin_diverging
 
 - title: Helper Geoms
   desc: Convenience geoms with built-in Catppuccin colors
   contents:
-  - starts_with("geom_catppuccin")
+  - geom_catppuccin_point
+  - geom_catppuccin_bar
+  - geom_catppuccin_col
+  - geom_catppuccin_line
+  - geom_catppuccin_boxplot
+  - geom_catppuccin_violin
 
 - title: Palettes and Utilities
   desc: Access palettes and color utilities
