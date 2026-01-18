@@ -12,7 +12,7 @@
 <link href="deps/JetBrains_Mono-0.4.10/font.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Catppuccin themes and palettes for ggplot2">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><script src="extra.js"></script><meta property="og:title" content="Catppuccin themes and palettes for ggplot2">
 <meta name="description" content="Beautiful Catppuccin color schemes for R visualizations">
 <meta property="og:description" content="Beautiful Catppuccin color schemes for R visualizations">
 </head>
@@ -20,7 +20,7 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
 
     <a class="navbar-brand me-2" href="index.html">ggcatppuccin</a>
 
@@ -62,142 +62,100 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>Catppuccin color palettes and themes for ggplot2. This package brings the beautiful <a href="https://github.com/catppuccin/catppuccin" class="external-link">Catppuccin</a> color scheme to your R visualizations.</p>
-<div class="section level2">
-<h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
-</h2>
-<ul>
-<li>🎨 All four official Catppuccin flavors: <strong>Latte</strong>, <strong>Frappé</strong>, <strong>Macchiato</strong>, and <strong>Mocha</strong>
-</li>
-<li>🎭 Complete ggplot2 theme with customized backgrounds, text, and grid lines</li>
-<li>🌈 Discrete and continuous color scales for both <code>color</code> and <code>fill</code> aesthetics</li>
-<li>🔧 Session-wide flavor defaults for consistent styling</li>
-<li>📝 R Markdown and Quarto integration with CSS generation</li>
-<li>🎯 Convenience geoms with built-in Catppuccin colors</li>
-</ul>
-</div>
+<p>Catppuccin palettes and a matching <code>ggplot2</code> theme for quickly styling plots across four flavors: Latte, Frappe, Macchiato, and Mocha. Discrete color and fill scales pair with <code><a href="reference/theme_catppuccin.html">theme_catppuccin()</a></code> so backgrounds, text, and grid lines stay coordinated.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of ggcatppuccin from GitHub:</p>
+<p>The package is not yet on CRAN; install the development version from GitHub:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ZhenyaKosovan/ggcatppuccin"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="quick-start">Quick Start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
+<p>Pick any flavor (default is <code>"mocha"</code>) and apply the theme plus the color or fill scale. A helper lets you set the session-wide default flavor if you want all plots to match.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://zhenyakosovan.github.io/ggcatppuccin">ggcatppuccin</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Basic plot with Mocha theme (default)</span></span>
+<span><span class="fu"><a href="reference/set_catppuccin_flavor.html">set_catppuccin_flavor</a></span><span class="op">(</span><span class="st">"macchiato"</span><span class="op">)</span></span>
+<span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">displ</span>, <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2.5</span>, alpha <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.7</span>, size <span class="op">=</span> <span class="fl">2.4</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/scale_color_catppuccin.html">scale_color_catppuccin</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/theme_catppuccin.html">theme_catppuccin</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
-<span>    title <span class="op">=</span> <span class="st">"Fuel Efficiency by Engine Size"</span>,</span>
-<span>    x <span class="op">=</span> <span class="st">"Displacement (L)"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Highway MPG"</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Fuel efficiency by engine size"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Catppuccin Macchiato palette via ggcatppuccin"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Displacement (liters)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Highway MPG"</span>,</span>
+<span>    color <span class="op">=</span> <span class="st">"Class"</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="choosing-a-flavor">Choosing a Flavor<a class="anchor" aria-label="anchor" href="#choosing-a-flavor"></a>
-</h2>
-<p>Switch between flavors easily:</p>
+<p><img src="reference/figures/README-unnamed-chunk-3-1.png" alt="Scatterplot of mpg data showing highway MPG vs displacement, colored by class with the Catppuccin Macchiato palette applied." width="100%"></p>
+<p>Use <code><a href="reference/scale_color_catppuccin.html">scale_fill_catppuccin()</a></code> with geoms that use fill aesthetics, and switch flavors as needed:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Use the light Latte theme</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">class</span>, fill <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">class</span>, fill <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/scale_color_catppuccin.html">scale_fill_catppuccin</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"latte"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/theme_catppuccin.html">theme_catppuccin</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"latte"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html" class="external-link">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Vehicle Classes - Latte Theme"</span><span class="op">)</span></span></code></pre></div>
-<p>Set a session-wide default to avoid repeating the <code>flavor</code> argument:</p>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Vehicle classes in mpg"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Latte flavor"</span>,</span>
+<span>    x <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Count"</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-4-1.png" alt="Bar chart of vehicle classes using the Catppuccin Latte palette for fills." width="100%"></p>
+<p>The raw hex values are available in <code>catppuccin_flavors</code> if you need to access individual colors directly.</p>
+</div>
+<div class="section level2">
+<h2 id="helper-geoms">Helper geoms<a class="anchor" aria-label="anchor" href="#helper-geoms"></a>
+</h2>
+<p><code><a href="reference/geom_catppuccin_point.html">geom_catppuccin_point()</a></code> and <code><a href="reference/geom_catppuccin_point.html">geom_catppuccin_col()</a></code> are small wrappers around the standard geoms that default to Catppuccin accent colors:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/set_catppuccin_flavor.html">set_catppuccin_flavor</a></span><span class="op">(</span><span class="st">"macchiato"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Now all functions use macchiato by default</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">wt</span>, <span class="va">mpg</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="reference/scale_color_catppuccin.html">scale_color_catppuccin</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="reference/theme_catppuccin.html">theme_catppuccin</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Fuel Efficiency vs Weight"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">wt</span>, <span class="va">mpg</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">gear</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/geom_catppuccin_point.html">geom_catppuccin_point</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"macchiato"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/scale_color_catppuccin.html">scale_color_catppuccin</a></span><span class="op">(</span><span class="st">"macchiato"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="reference/theme_catppuccin.html">theme_catppuccin</a></span><span class="op">(</span><span class="st">"macchiato"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="available-scales">Available Scales<a class="anchor" aria-label="anchor" href="#available-scales"></a>
+<h2 id="r-markdown--quarto-styling">R Markdown / Quarto styling<a class="anchor" aria-label="anchor" href="#r-markdown--quarto-styling"></a>
 </h2>
-<div class="section level3">
-<h3 id="discrete-scales">Discrete Scales<a class="anchor" aria-label="anchor" href="#discrete-scales"></a>
-</h3>
+<p>Generate a CSS snippet for your document and point to it from YAML:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/scale_color_catppuccin.html">scale_color_catppuccin</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"mocha"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/scale_color_catppuccin.html">scale_fill_catppuccin</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"mocha"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/catppuccin_css.html">write_catppuccin_css</a></span><span class="op">(</span><span class="st">"catppuccin.css"</span>, flavor <span class="op">=</span> <span class="st">"latte"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> catppuccin.css</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="continuous-scales">Continuous Scales<a class="anchor" aria-label="anchor" href="#continuous-scales"></a>
-</h3>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/scale_color_catppuccin_c.html">scale_color_catppuccin_c</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"mocha"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/scale_color_catppuccin_c.html">scale_fill_catppuccin_c</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"mocha"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="sequential-and-diverging-scales">Sequential and Diverging Scales<a class="anchor" aria-label="anchor" href="#sequential-and-diverging-scales"></a>
-</h3>
+<div class="section level2">
+<h2 id="flavors-at-a-glance">Flavors at a glance<a class="anchor" aria-label="anchor" href="#flavors-at-a-glance"></a>
+</h2>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/scale_color_catppuccin_sequential.html">scale_color_catppuccin_sequential</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"mocha"</span>, colors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"mauve"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/scale_color_catppuccin_diverging.html">scale_color_catppuccin_diverging</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"mocha"</span>, mid_color <span class="op">=</span> <span class="st">"base"</span><span class="op">)</span></span></code></pre></div>
-</div>
-</div>
-<div class="section level2">
-<h2 id="helper-geoms">Helper Geoms<a class="anchor" aria-label="anchor" href="#helper-geoms"></a>
-</h2>
-<p>Convenience geoms with built-in Catppuccin colors:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Points default to blue</span></span>
-<span><span class="fu"><a href="reference/geom_catppuccin_point.html">geom_catppuccin_point</a></span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com" class="external-link">patchwork</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Bars default to mauve</span></span>
-<span><span class="fu"><a href="reference/geom_catppuccin_point.html">geom_catppuccin_bar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">flavors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"latte"</span>, <span class="st">"frappe"</span>, <span class="st">"macchiato"</span>, <span class="st">"mocha"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Lines default to lavender</span></span>
-<span><span class="fu"><a href="reference/geom_catppuccin_point.html">geom_catppuccin_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="r-markdown-integration">R Markdown Integration<a class="anchor" aria-label="anchor" href="#r-markdown-integration"></a>
-</h2>
-<p>Generate CSS for your R Markdown or Quarto documents:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Generate CSS string</span></span>
-<span><span class="va">css</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/catppuccin_css.html">catppuccin_css</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="st">"mocha"</span><span class="op">)</span></span>
+<span><span class="va">plot_flavor</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">flavor</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">displ</span>, <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span>, alpha <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="reference/scale_color_catppuccin.html">scale_color_catppuccin</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="va">flavor</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="reference/theme_catppuccin.html">theme_catppuccin</a></span><span class="op">(</span>flavor <span class="op">=</span> <span class="va">flavor</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html" class="external-link">guides</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Catppuccin"</span>, <span class="fu">tools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/tools/toTitleCase.html" class="external-link">toTitleCase</a></span><span class="op">(</span><span class="va">flavor</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>      x <span class="op">=</span> <span class="st">"Displacement"</span>,</span>
+<span>      y <span class="op">=</span> <span class="st">"Highway MPG"</span></span>
+<span>    <span class="op">)</span></span>
+<span><span class="op">}</span></span>
 <span></span>
-<span><span class="co"># Or write to file</span></span>
-<span><span class="fu"><a href="reference/catppuccin_css.html">write_catppuccin_css</a></span><span class="op">(</span><span class="st">"custom.css"</span>, flavor <span class="op">=</span> <span class="st">"frappe"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
-</h2>
-<ul>
-<li>
-<a href="https://zhenyakosovan.github.io/ggcatppuccin/articles/getting-started.html">Getting Started</a> - Basic usage and examples</li>
-<li>
-<a href="https://zhenyakosovan.github.io/ggcatppuccin/articles/customization.html">Customization Guide</a> - Advanced customization options</li>
-<li>
-<a href="https://zhenyakosovan.github.io/ggcatppuccin/articles/gallery.html">Gallery</a> - Example plots and visualizations</li>
-<li>
-<a href="https://zhenyakosovan.github.io/ggcatppuccin/articles/rmarkdown-integration.html">R Markdown Integration</a> - Using Catppuccin in documents</li>
-</ul>
-</div>
-<div class="section level2">
-<h2 id="credits">Credits<a class="anchor" aria-label="anchor" href="#credits"></a>
-</h2>
-<p>This package is inspired by the <a href="https://github.com/catppuccin/catppuccin" class="external-link">Catppuccin</a> color scheme created by the Catppuccin community.</p>
-</div>
-<div class="section level2">
-<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
-</h2>
-<p>MIT</p>
+<span><span class="va">plots</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">flavors</span>, <span class="va">plot_flavor</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 2x2 grid of flavors</span></span>
+<span><span class="op">(</span><span class="va">plots</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="op">|</span> <span class="va">plots</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">/</span></span>
+<span>  <span class="op">(</span><span class="va">plots</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span> <span class="op">|</span> <span class="va">plots</span><span class="op">[[</span><span class="fl">4</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-7-1.png" alt="Four scatterplots (Latte, Frappe, Macchiato, Mocha) showing Catppuccin palettes applied to mpg data." width="100%"></p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -234,8 +192,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/ZhenyaKosovan/ggcatpuccin/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/ZhenyaKosovan/ggcatpuccin/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://codecov.io/gh/ZhenyaKosovan/ggcatpuccin?branch=main" class="external-link"><img src="https://codecov.io/gh/ZhenyaKosovan/ggcatpuccin/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/ZhenyaKosovan/ggcatppuccin/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/ZhenyaKosovan/ggcatppuccin/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 
