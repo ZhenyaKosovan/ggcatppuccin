@@ -9,13 +9,14 @@
 Source:
 [`DESCRIPTION`](https://github.com/ZhenyaKosovan/ggcatppuccin/blob/main/DESCRIPTION)
 
-Kosovan Z (2026). *ggcatppuccin: Helper Function for ggplot2*. R package
-version 1.0.0, <https://zhenyakosovan.github.io/ggcatppuccin>.
+Kosovan Z (2026). *ggcatppuccin: Catppuccin Color Palettes and Themes
+for 'ggplot2'*. R package version 1.0.0,
+<https://zhenyakosovan.github.io/ggcatppuccin/>.
 
     @Manual{,
-      title = {ggcatppuccin: Helper Function for ggplot2},
+      title = {ggcatppuccin: Catppuccin Color Palettes and Themes for 'ggplot2'},
       author = {Zhenya Kosovan},
       year = {2026},
       note = {R package version 1.0.0},
-      url = {https://zhenyakosovan.github.io/ggcatppuccin},
+      url = {https://zhenyakosovan.github.io/ggcatppuccin/},
     }
