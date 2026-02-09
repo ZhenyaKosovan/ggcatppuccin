@@ -1,12 +1,14 @@
 Package: ggcatppuccin
-Title: Helper Function for ggplot2
+Title: Catppuccin Color Palettes and Themes for 'ggplot2'
 Version: 1.0.0
 Authors@R: 
     person("Zhenya", "Kosovan", , "yevhen.kosovan@outlook.com", role = c("aut", "cre"))
 Author: Zhenya Kosovan [aut, cre]
 Maintainer: Zhenya Kosovan <yevhen.kosovan@outlook.com>
-Description: Helper function to make your ggplots style with catppuccin-inspired palette.
-URL: https://zhenyakosovan.github.io/ggcatppuccin, https://github.com/ZhenyaKosovan/ggcatppuccin, https://zhenyakosovan.github.io/ggcatppuccin/
+Description: Provides Catppuccin color palettes and matching themes for 'ggplot2'.
+    Supports four flavors (Latte, Frappe, Macchiato, Mocha) with discrete,
+    continuous, sequential, and diverging color scales.
+URL: https://zhenyakosovan.github.io/ggcatppuccin/, https://github.com/ZhenyaKosovan/ggcatppuccin
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
