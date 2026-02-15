@@ -4,8 +4,9 @@
 
 ggcatppuccin provides Catppuccin color palettes and themes for ggplot2,
 allowing you to create beautiful, cohesive visualizations with minimal
-effort. The package supports all four official Catppuccin flavors:
-Latte, Frappé, Macchiato, and Mocha.
+effort. The package supports the four official Catppuccin flavors
+(Latte, Frappé, Macchiato, and Mocha) plus colorblind-friendly variants
+(`latte_cb`, `frappe_cb`, `macchiato_cb`, and `mocha_cb`).
 
 ## Installation
 
@@ -83,6 +84,49 @@ ggplot(mtcars, aes(wt, mpg, color = factor(cyl))) +
 ![](getting-started_files/figure-html/session-default-1.png)
 
 You can still override the default by specifying `flavor` explicitly:
+
+### Automatic Colors with `use_catppuccin()`
+
+For a more automatic setup, call
+[`use_catppuccin()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/use_catppuccin.md).
+It sets Catppuccin defaults for common geoms (`point`, `line`, `bar`,
+`col`, `boxplot`, `violin`) and for discrete color/fill scales, so many
+plots won’t need explicit `scale_*_catppuccin()` calls or
+`geom_catppuccin_*()` wrappers:
+
+``` r
+use_catppuccin("macchiato")
+
+# Plain geom_point() now defaults to Catppuccin blue:
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point(size = 3) +
+  theme_catppuccin() +
+  labs(title = "Automatic point color")
+```
+
+![](getting-started_files/figure-html/use-catppuccin-1.png)
+
+``` r
+
+# Mapped color aesthetic automatically uses the Catppuccin palette:
+ggplot(mtcars, aes(wt, mpg, color = factor(cyl))) +
+  geom_point(size = 3) +
+  theme_catppuccin() +
+  labs(
+    title = "Automatic discrete palette",
+    color = "Cylinders"
+  )
+```
+
+![](getting-started_files/figure-html/use-catppuccin-2.png)
+
+Call
+[`reset_catppuccin()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/reset_catppuccin.md)
+to restore the original ggplot2 defaults:
+
+``` r
+reset_catppuccin()
+```
 
 ``` r
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +

@@ -142,7 +142,7 @@ Here’s a complete example:
 ---
 title: "Analysis Report"
 author: "Your Name"
-date: "2026-02-09"
+date: "2026-02-15"
 output:
   html_document:
     css: catppuccin.css

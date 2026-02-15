@@ -22,7 +22,8 @@ scale_fill_catppuccin_c(
 - flavor:
 
   The flavor of Catppuccin to use ("mocha", "latte", "frappe",
-  "macchiato"). Defaults to the value set by
+  "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
+  Defaults to the value set by
   [`set_catppuccin_flavor()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/set_catppuccin_flavor.md),
   or "mocha" if not set.
 

@@ -1,8 +1,9 @@
 # Catppuccin Theme for ggplot2
 
 A minimal ggplot2 theme that applies Catppuccin colors to text,
-backgrounds, and grid lines. The default flavor is "mocha", but all
-official flavors are available.
+backgrounds, and grid lines. The default flavor is "mocha", and all
+built-in flavors are available, including the colorblind-friendly `_cb`
+variants.
 
 ## Usage
 
@@ -18,8 +19,9 @@ theme_catppuccin(
 
 - flavor:
 
-  The Catppuccin flavor to use ("mocha", "latte", "frappe",
-  "macchiato"). Defaults to the value set by
+  The Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato",
+  "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb"). Defaults to the
+  value set by
   [`set_catppuccin_flavor()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/set_catppuccin_flavor.md),
   or "mocha" if not set.
 

@@ -87,7 +87,7 @@ minimalism.</p>
 full axis decoration:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">economics</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">date</span>, <span class="va">unemploy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="fu"><a href="../reference/catppuccin_palette.html">catppuccin_palette</a></span><span class="op">(</span><span class="st">"mocha"</span>, <span class="st">"blue"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">catppuccin_flavors</span><span class="op">$</span><span class="va">mocha</span><span class="op">$</span><span class="va">blue</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/theme_catppuccin.html">theme_catppuccin</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
 <span>    title <span class="op">=</span> <span class="st">"US Unemployment Over Time"</span>,</span>
@@ -103,7 +103,7 @@ full axis decoration:</p>
 default, with optional control:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">displ</span>, <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>color <span class="op">=</span> <span class="fu"><a href="../reference/catppuccin_palette.html">catppuccin_palette</a></span><span class="op">(</span><span class="st">"mocha"</span>, <span class="st">"mauve"</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">catppuccin_flavors</span><span class="op">$</span><span class="va">mocha</span><span class="op">$</span><span class="va">mauve</span>, size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/theme_catppuccin_minimal.html">theme_catppuccin_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
 <span>    title <span class="op">=</span> <span class="st">"Minimal Theme - No Grid"</span>,</span>
@@ -114,7 +114,7 @@ default, with optional control:</p>
 <p>Add major grid lines:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">displ</span>, <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>color <span class="op">=</span> <span class="fu"><a href="../reference/catppuccin_palette.html">catppuccin_palette</a></span><span class="op">(</span><span class="st">"mocha"</span>, <span class="st">"mauve"</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">catppuccin_flavors</span><span class="op">$</span><span class="va">mocha</span><span class="op">$</span><span class="va">mauve</span>, size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/theme_catppuccin_minimal.html">theme_catppuccin_minimal</a></span><span class="op">(</span>grid <span class="op">=</span> <span class="st">"major"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
 <span>    title <span class="op">=</span> <span class="st">"Minimal Theme - Major Grid"</span>,</span>
@@ -194,7 +194,7 @@ perfect for maps or heatmaps:</p>
 <p>Extract specific colors for custom use:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get specific colors</span></span>
-<span><span class="va">my_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/catppuccin_palette.html">catppuccin_palette</a></span><span class="op">(</span><span class="st">"mocha"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"green"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">my_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unname.html" class="external-link">unname</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="va">catppuccin_flavors</span><span class="op">$</span><span class="va">mocha</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"green"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">my_colors</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "#89b4fa" "#f38ba8" "#a6e3a1"</span></span>
 <span></span>
@@ -242,9 +242,49 @@ modifications:</p>
 <p><img src="customization_files/figure-html/custom-modifications-1.png" class="r-plt" alt="" width="672"></p>
 </div>
 <div class="section level2">
+<h2 id="session-wide-defaults-with-use_catppuccin">Session-Wide Defaults with <code>use_catppuccin()</code><a class="anchor" aria-label="anchor" href="#session-wide-defaults-with-use_catppuccin"></a>
+</h2>
+<p>Instead of adding <code><a href="../reference/scale_color_catppuccin.html">scale_color_catppuccin()</a></code> to many
+plots, you can activate Catppuccin colors globally.
+<code><a href="../reference/use_catppuccin.html">use_catppuccin()</a></code> updates the default colors for common
+geoms (point, line, bar, col, boxplot, violin) and sets the default
+discrete color/fill scales:</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/use_catppuccin.html">use_catppuccin</a></span><span class="op">(</span><span class="st">"mocha"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># geom_line() now uses Catppuccin blue by default:</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">economics</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">date</span>, <span class="va">unemploy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/theme_catppuccin.html">theme_catppuccin</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Automatic line color via use_catppuccin()"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Date"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Unemployed (thousands)"</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<p><img src="customization_files/figure-html/use-catppuccin-demo-1.png" class="r-plt" alt="" width="672"></p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="co"># Mapped discrete aesthetics also pick up the Catppuccin palette:</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">class</span>, fill <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/theme_catppuccin.html">theme_catppuccin</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html" class="external-link">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Automatic discrete fill palette"</span>,</span>
+<span>    x <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Count"</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<p><img src="customization_files/figure-html/use-catppuccin-demo-2.png" class="r-plt" alt="" width="672"></p>
+<p>Switch flavors mid-session by calling <code><a href="../reference/use_catppuccin.html">use_catppuccin()</a></code>
+again with a different flavor. When you’re done, restore ggplot2
+defaults:</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/reset_catppuccin.html">reset_catppuccin</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
 <h2 id="combining-multiple-aesthetics">Combining Multiple Aesthetics<a class="anchor" aria-label="anchor" href="#combining-multiple-aesthetics"></a>
 </h2>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">wt</span>, <span class="va">mpg</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, size <span class="op">=</span> <span class="va">hp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/scale_color_catppuccin.html">scale_color_catppuccin</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>

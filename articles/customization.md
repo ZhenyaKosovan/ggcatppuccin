@@ -20,7 +20,7 @@ includes grid lines and full axis decoration:
 
 ``` r
 ggplot(economics, aes(date, unemploy)) +
-  geom_line(color = catppuccin_palette("mocha", "blue")) +
+  geom_line(color = catppuccin_flavors$mocha$blue) +
   theme_catppuccin() +
   labs(
     title = "US Unemployment Over Time",
@@ -38,7 +38,7 @@ removes grid lines by default, with optional control:
 
 ``` r
 ggplot(mpg, aes(displ, hwy)) +
-  geom_point(color = catppuccin_palette("mocha", "mauve"), size = 2) +
+  geom_point(color = catppuccin_flavors$mocha$mauve, size = 2) +
   theme_catppuccin_minimal() +
   labs(
     title = "Minimal Theme - No Grid",
@@ -53,7 +53,7 @@ Add major grid lines:
 
 ``` r
 ggplot(mpg, aes(displ, hwy)) +
-  geom_point(color = catppuccin_palette("mocha", "mauve"), size = 2) +
+  geom_point(color = catppuccin_flavors$mocha$mauve, size = 2) +
   theme_catppuccin_minimal(grid = "major") +
   labs(
     title = "Minimal Theme - Major Grid",
@@ -142,7 +142,7 @@ Extract specific colors for custom use:
 
 ``` r
 # Get specific colors
-my_colors <- catppuccin_palette("mocha", c("blue", "red", "green"))
+my_colors <- unname(unlist(catppuccin_flavors$mocha[c("blue", "red", "green")]))
 print(my_colors)
 #> [1] "#89b4fa" "#f38ba8" "#a6e3a1"
 
@@ -198,6 +198,56 @@ ggplot(mpg, aes(class, hwy, fill = class)) +
 ```
 
 ![](customization_files/figure-html/custom-modifications-1.png)
+
+## Session-Wide Defaults with `use_catppuccin()`
+
+Instead of adding
+[`scale_color_catppuccin()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/scale_color_catppuccin.md)
+to many plots, you can activate Catppuccin colors globally.
+[`use_catppuccin()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/use_catppuccin.md)
+updates the default colors for common geoms (point, line, bar, col,
+boxplot, violin) and sets the default discrete color/fill scales:
+
+``` r
+use_catppuccin("mocha")
+
+# geom_line() now uses Catppuccin blue by default:
+ggplot(economics, aes(date, unemploy)) +
+  geom_line(linewidth = 1) +
+  theme_catppuccin() +
+  labs(
+    title = "Automatic line color via use_catppuccin()",
+    x = "Date",
+    y = "Unemployed (thousands)"
+  )
+```
+
+![](customization_files/figure-html/use-catppuccin-demo-1.png)
+
+``` r
+
+# Mapped discrete aesthetics also pick up the Catppuccin palette:
+ggplot(mpg, aes(class, fill = class)) +
+  geom_bar() +
+  theme_catppuccin() +
+  guides(fill = "none") +
+  labs(
+    title = "Automatic discrete fill palette",
+    x = NULL,
+    y = "Count"
+  )
+```
+
+![](customization_files/figure-html/use-catppuccin-demo-2.png)
+
+Switch flavors mid-session by calling
+[`use_catppuccin()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/use_catppuccin.md)
+again with a different flavor. When you’re done, restore ggplot2
+defaults:
+
+``` r
+reset_catppuccin()
+```
 
 ## Combining Multiple Aesthetics
 

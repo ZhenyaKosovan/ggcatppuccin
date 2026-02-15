@@ -61,6 +61,10 @@ Access palettes and color utilities
   : Compare Catppuccin Flavors
 - [`set_catppuccin_flavor()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/set_catppuccin_flavor.md)
   : Set Global Catppuccin Flavor
+- [`use_catppuccin()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/use_catppuccin.md)
+  : Activate Catppuccin Defaults for Common Geoms and Discrete Scales
+- [`reset_catppuccin()`](https://zhenyakosovan.github.io/ggcatppuccin/reference/reset_catppuccin.md)
+  : Reset Geom and Scale Defaults to ggplot2 Originals
 
 ## R Markdown Integration
 

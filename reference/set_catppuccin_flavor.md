@@ -14,7 +14,8 @@ set_catppuccin_flavor(flavor)
 
 - flavor:
 
-  Flavor name to store (e.g. `"mocha"`). No validation is applied.
+  Flavor name to store (e.g. `"mocha"` or `"mocha_cb"`). No validation
+  is applied.
 
 ## Value
 
