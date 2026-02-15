@@ -5,7 +5,7 @@
 \alias{catppuccin_flavors}
 \title{Catppuccin Color Palettes}
 \format{
-An object of class \code{list} of length 4.
+An object of class \code{list} of length 8.
 }
 \usage{
 catppuccin_flavors
@@ -15,11 +15,16 @@ A named list of flavors, each itself a named list of hex strings.
 }
 \description{
 A named list containing hex color codes for all four Catppuccin flavors:
-Latte, Frappe, Macchiato, and Mocha. Each flavor contains the same set of
-palette elements, matching the official Catppuccin design system.
+Latte, Frappe, Macchiato, and Mocha, plus colorblind-friendly variants
+(\code{latte_cb}, \code{frappe_cb}, \code{macchiato_cb}, \code{mocha_cb}). Each flavor contains
+the same set of palette elements, matching the official Catppuccin design
+system. The \verb{_cb} variants adjust accent colors (green, mauve, lavender, and
+sometimes peach) so that all pairs remain distinguishable under deuteranopia,
+protanopia, and tritanopia (min pairwise delta-E > 10).
 }
 \examples{
 catppuccin_flavors$mocha$blue
+catppuccin_flavors$mocha_cb$blue
 names(catppuccin_flavors$latte)
 }
 \seealso{

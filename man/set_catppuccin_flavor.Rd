@@ -7,7 +7,8 @@
 set_catppuccin_flavor(flavor)
 }
 \arguments{
-\item{flavor}{Flavor name to store (e.g. \code{"mocha"}). No validation is applied.}
+\item{flavor}{Flavor name to store (e.g. \code{"mocha"} or \code{"mocha_cb"}). No
+validation is applied.}
 }
 \value{
 Invisibly returns the previous value of the option.

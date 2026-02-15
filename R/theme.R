@@ -1,10 +1,11 @@
 #' Catppuccin Theme for ggplot2
 #'
 #' A minimal ggplot2 theme that applies Catppuccin colors to text, backgrounds,
-#' and grid lines. The default flavor is "mocha", but all official flavors are
-#' available.
+#' and grid lines. The default flavor is "mocha", and all built-in flavors are
+#' available, including the colorblind-friendly `_cb` variants.
 #'
-#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param base_size Base font size passed to [ggplot2::theme_minimal()].
 #' @param base_family Base font family passed to [ggplot2::theme_minimal()].
@@ -59,7 +60,8 @@ theme_catppuccin <- function(flavor = getOption("ggcatppuccin.flavor", "mocha"),
 #' An even more minimal theme than `theme_catppuccin()`, with no grid lines by default.
 #' Useful for presentations or when you want maximum focus on the data.
 #'
-#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param base_size Base font size passed to [ggplot2::theme_minimal()].
 #' @param base_family Base font family passed to [ggplot2::theme_minimal()].
@@ -127,7 +129,8 @@ theme_catppuccin_minimal <- function(flavor = getOption("ggcatppuccin.flavor", "
 #' A completely minimal theme with no axes, grid, or text elements except the title.
 #' Ideal for maps, images, or highly stylized visualizations.
 #'
-#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param base_size Base font size for the title.
 #' @param base_family Base font family for the title.

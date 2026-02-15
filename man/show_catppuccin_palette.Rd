@@ -10,7 +10,8 @@ show_catppuccin_palette(
 )
 }
 \arguments{
-\item{flavor}{The Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+\item{flavor}{The Catppuccin flavor to use ("mocha", "latte", "frappe",
+"macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 Defaults to the value set by \code{set_catppuccin_flavor()}, or "mocha" if not set.}
 
 \item{type}{Type of colors to show: "all" for all colors, "accents" for just

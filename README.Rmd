@@ -70,6 +70,27 @@ ggplot(mpg, aes(class, fill = class)) +
 
 The raw hex values are available in `catppuccin_flavors` if you need to access individual colors directly.
 
+## Automatic Catppuccin colors
+
+Call `use_catppuccin()` once to set Catppuccin defaults for common geoms
+(`geom_point()`, `geom_line()`, `geom_bar()`, `geom_col()`, `geom_boxplot()`,
+`geom_violin()`) and discrete color/fill mappings:
+
+```{r, eval = FALSE}
+use_catppuccin("macchiato")
+
+# Plain geoms now use Catppuccin accent colors:
+ggplot(mtcars, aes(wt, mpg)) + geom_point()
+
+# Mapped discrete aesthetics also use the palette automatically:
+ggplot(mpg, aes(displ, hwy, color = class)) +
+  geom_point() +
+  theme_catppuccin()
+
+# Restore ggplot2 defaults when done:
+reset_catppuccin()
+```
+
 ## Helper geoms
 
 `geom_catppuccin_point()` and `geom_catppuccin_col()` are small wrappers around the standard geoms that default to Catppuccin accent colors:

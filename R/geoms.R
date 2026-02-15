@@ -5,7 +5,8 @@
 #'
 #' @param mapping,data,position,na.rm,show.legend,inherit.aes,... Standard ggplot2
 #'   geom parameters. See the corresponding ggplot2 geom documentation for details.
-#' @param flavor Which Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor Which Catppuccin flavor to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param color,colour Default point/line/border color; falls back to a Catppuccin
 #'   accent if `NULL`.

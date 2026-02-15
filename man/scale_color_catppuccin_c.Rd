@@ -16,7 +16,8 @@ scale_fill_catppuccin_c(
 )
 }
 \arguments{
-\item{flavor}{The flavor of Catppuccin to use ("mocha", "latte", "frappe", "macchiato").
+\item{flavor}{The flavor of Catppuccin to use ("mocha", "latte", "frappe",
+"macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 Defaults to the value set by \code{set_catppuccin_flavor()}, or "mocha" if not set.}
 
 \item{...}{Additional arguments passed to \code{\link[ggplot2:scale_gradient]{ggplot2::scale_color_gradient()}} or

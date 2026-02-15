@@ -106,7 +106,8 @@ geom_catppuccin_violin(
 \item{mapping, data, position, na.rm, show.legend, inherit.aes, ...}{Standard ggplot2
 geom parameters. See the corresponding ggplot2 geom documentation for details.}
 
-\item{flavor}{Which Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+\item{flavor}{Which Catppuccin flavor to use ("mocha", "latte", "frappe",
+"macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 Defaults to the value set by \code{set_catppuccin_flavor()}, or "mocha" if not set.}
 
 \item{color, colour}{Default point/line/border color; falls back to a Catppuccin

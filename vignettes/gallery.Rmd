@@ -228,6 +228,26 @@ ggplot(mpg, aes(class, hwy)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+## Automatic Styling with `use_catppuccin()`
+
+With `use_catppuccin()`, many plain ggplot2 plots pick up Catppuccin defaults
+automatically (common geoms plus discrete color/fill scales):
+
+```{r auto-styling}
+use_catppuccin("mocha")
+
+# No explicit scale needed here: color is discrete and geom_point() is supported
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point(size = 3, alpha = 0.7) +
+  theme_catppuccin() +
+  labs(
+    title = "Automatic Color Palette",
+    subtitle = "Via use_catppuccin() defaults for discrete color mapping"
+  )
+
+reset_catppuccin()
+```
+
 ## All Four Flavors
 
 Compare the same plot across all flavors:

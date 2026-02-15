@@ -6,7 +6,8 @@ utils::globalVariables(c("x", "y", "name", "color", "flavor"))
 #' Extract a vector of color hex codes from a Catppuccin flavor. Useful for
 #' manual color selection or creating custom scales.
 #'
-#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param colors Character vector of color names to extract. If NULL (default),
 #'   returns all accent colors in the standard palette order.
@@ -51,7 +52,8 @@ catppuccin_palette <- function(flavor = getOption("ggcatppuccin.flavor", "mocha"
 #' Display all colors in a Catppuccin flavor as a visual swatch. Useful for
 #' exploring available colors and choosing custom color combinations.
 #'
-#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor The Catppuccin flavor to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param type Type of colors to show: "all" for all colors, "accents" for just
 #'   accent colors, "neutrals" for base/text/surface colors.

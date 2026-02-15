@@ -4,7 +4,8 @@
 #' in R Markdown and Quarto documents. The CSS sets body background, text,
 #' heading, link, and code block colors using the chosen flavor.
 #'
-#' @param flavor Which Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor Which Catppuccin flavor to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @return `catppuccin_css()` returns a single string containing CSS. `write_catppuccin_css()`
 #'   writes that CSS to a file and invisibly returns the normalized file path.

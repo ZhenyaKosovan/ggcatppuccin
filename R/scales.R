@@ -3,7 +3,8 @@
 #' ggplot2 discrete color and fill scales that use the Catppuccin palette. The
 #' palette order is kept consistent across flavors.
 #'
-#' @param flavor The flavor of Catppuccin to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor The flavor of Catppuccin to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param ... Additional arguments passed to [ggplot2::discrete_scale()].
 #'
@@ -24,7 +25,11 @@ scale_color_catppuccin <- function(flavor = getOption("ggcatppuccin.flavor", "mo
   # Define the palette order
   pal_vec <- c(cols$blue, cols$mauve, cols$red, cols$green, cols$peach, cols$yellow, cols$lavender)
 
-  scale_color_manual(values = pal_vec, ...)
+  ggplot2::discrete_scale(
+    aesthetics = "colour",
+    palette = function(n) rep_len(pal_vec, n),
+    ...
+  )
 }
 
 #' @rdname scale_color_catppuccin
@@ -35,7 +40,11 @@ scale_fill_catppuccin <- function(flavor = getOption("ggcatppuccin.flavor", "moc
 
   pal_vec <- c(cols$blue, cols$mauve, cols$red, cols$green, cols$peach, cols$yellow, cols$lavender)
 
-  scale_fill_manual(values = pal_vec, ...)
+  ggplot2::discrete_scale(
+    aesthetics = "fill",
+    palette = function(n) rep_len(pal_vec, n),
+    ...
+  )
 }
 
 #' @rdname scale_color_catppuccin
@@ -51,7 +60,8 @@ scale_fill_catppuccin_d <- scale_fill_catppuccin
 #' Continuous color and fill scales that interpolate between Catppuccin colors.
 #' Creates smooth gradients suitable for numeric data.
 #'
-#' @param flavor The flavor of Catppuccin to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor The flavor of Catppuccin to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param ... Additional arguments passed to [ggplot2::scale_color_gradient()] or
 #'   [ggplot2::scale_fill_gradient()].
@@ -87,7 +97,8 @@ scale_fill_catppuccin_c <- function(flavor = getOption("ggcatppuccin.flavor", "m
 #' Sequential color and fill scales that create a gradient from the base color
 #' to a chosen accent color, suitable for showing ordered numeric data.
 #'
-#' @param flavor The flavor of Catppuccin to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor The flavor of Catppuccin to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param accent Which accent color to use for the high end ("blue", "mauve", "red",
 #'   "green", "peach", "yellow", "lavender"). Defaults to "blue".
@@ -128,7 +139,8 @@ scale_fill_catppuccin_sequential <- function(flavor = getOption("ggcatppuccin.fl
 #' Diverging color and fill scales that use Catppuccin colors with a neutral
 #' midpoint, suitable for data with a meaningful center point.
 #'
-#' @param flavor The flavor of Catppuccin to use ("mocha", "latte", "frappe", "macchiato").
+#' @param flavor The flavor of Catppuccin to use ("mocha", "latte", "frappe",
+#'   "macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 #'   Defaults to the value set by `set_catppuccin_flavor()`, or "mocha" if not set.
 #' @param low_color Color for the low end ("blue", "mauve", "red", "green", "peach",
 #'   "yellow", "lavender"). Defaults to "blue".

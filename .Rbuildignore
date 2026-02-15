@@ -14,3 +14,6 @@
 ^\.Rprofile$
 ^codecov\.yml$
 ^\.covrignore$
+^AGENT\.md$
+^README\.html$
+^scripts$

@@ -186,6 +186,44 @@ ggplot(mpg, aes(class, hwy, fill = class)) +
   )
 ```
 
+## Session-Wide Defaults with `use_catppuccin()`
+
+Instead of adding `scale_color_catppuccin()` to many plots, you can activate Catppuccin
+colors globally. `use_catppuccin()` updates the default colors for common geoms (point,
+line, bar, col, boxplot, violin) and sets the default discrete color/fill scales:
+
+```{r use-catppuccin-demo}
+use_catppuccin("mocha")
+
+# geom_line() now uses Catppuccin blue by default:
+ggplot(economics, aes(date, unemploy)) +
+  geom_line(linewidth = 1) +
+  theme_catppuccin() +
+  labs(
+    title = "Automatic line color via use_catppuccin()",
+    x = "Date",
+    y = "Unemployed (thousands)"
+  )
+
+# Mapped discrete aesthetics also pick up the Catppuccin palette:
+ggplot(mpg, aes(class, fill = class)) +
+  geom_bar() +
+  theme_catppuccin() +
+  guides(fill = "none") +
+  labs(
+    title = "Automatic discrete fill palette",
+    x = NULL,
+    y = "Count"
+  )
+```
+
+Switch flavors mid-session by calling `use_catppuccin()` again with a different flavor.
+When you're done, restore ggplot2 defaults:
+
+```{r reset-defaults}
+reset_catppuccin()
+```
+
 ## Combining Multiple Aesthetics
 
 ```{r multiple-aesthetics}

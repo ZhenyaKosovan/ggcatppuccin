@@ -11,7 +11,8 @@ theme_catppuccin(
 )
 }
 \arguments{
-\item{flavor}{The Catppuccin flavor to use ("mocha", "latte", "frappe", "macchiato").
+\item{flavor}{The Catppuccin flavor to use ("mocha", "latte", "frappe",
+"macchiato", "mocha_cb", "latte_cb", "frappe_cb", "macchiato_cb").
 Defaults to the value set by \code{set_catppuccin_flavor()}, or "mocha" if not set.}
 
 \item{base_size}{Base font size passed to \code{\link[ggplot2:ggtheme]{ggplot2::theme_minimal()}}.}
@@ -23,8 +24,8 @@ A \code{ggplot2} theme object.
 }
 \description{
 A minimal ggplot2 theme that applies Catppuccin colors to text, backgrounds,
-and grid lines. The default flavor is "mocha", but all official flavors are
-available.
+and grid lines. The default flavor is "mocha", and all built-in flavors are
+available, including the colorblind-friendly \verb{_cb} variants.
 }
 \examples{
 library(ggplot2)

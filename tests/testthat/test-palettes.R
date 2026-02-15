@@ -1,5 +1,6 @@
 test_that("catppuccin_flavors provides all flavors and colors", {
-  expected_flavors <- c("latte", "frappe", "macchiato", "mocha")
+  expected_flavors <- c("latte", "frappe", "macchiato", "mocha",
+                        "latte_cb", "frappe_cb", "macchiato_cb", "mocha_cb")
   expect_setequal(names(catppuccin_flavors), expected_flavors)
 
   expected_colors <- c(
