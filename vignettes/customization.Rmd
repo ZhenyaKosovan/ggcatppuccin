@@ -33,7 +33,7 @@ The standard `theme_catppuccin()` includes grid lines and full axis decoration:
 
 ```{r standard-theme}
 ggplot(economics, aes(date, unemploy)) +
-  geom_line(color = catppuccin_palette("mocha", "blue")) +
+  geom_line(color = catppuccin_flavors$mocha$blue) +
   theme_catppuccin() +
   labs(
     title = "US Unemployment Over Time",
@@ -48,7 +48,7 @@ ggplot(economics, aes(date, unemploy)) +
 
 ```{r minimal-theme}
 ggplot(mpg, aes(displ, hwy)) +
-  geom_point(color = catppuccin_palette("mocha", "mauve"), size = 2) +
+  geom_point(color = catppuccin_flavors$mocha$mauve, size = 2) +
   theme_catppuccin_minimal() +
   labs(
     title = "Minimal Theme - No Grid",
@@ -61,7 +61,7 @@ Add major grid lines:
 
 ```{r minimal-with-grid}
 ggplot(mpg, aes(displ, hwy)) +
-  geom_point(color = catppuccin_palette("mocha", "mauve"), size = 2) +
+  geom_point(color = catppuccin_flavors$mocha$mauve, size = 2) +
   theme_catppuccin_minimal(grid = "major") +
   labs(
     title = "Minimal Theme - Major Grid",
@@ -139,7 +139,7 @@ Extract specific colors for custom use:
 
 ```{r palette-extraction}
 # Get specific colors
-my_colors <- catppuccin_palette("mocha", c("blue", "red", "green"))
+my_colors <- unname(unlist(catppuccin_flavors$mocha[c("blue", "red", "green")]))
 print(my_colors)
 
 # Use in a plot

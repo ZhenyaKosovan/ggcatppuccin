@@ -86,6 +86,8 @@ reference:
   - show_catppuccin_palette
   - compare_flavors
   - set_catppuccin_flavor
+  - use_catppuccin
+  - reset_catppuccin
 
 - title: R Markdown Integration
   desc: CSS generation for documents
